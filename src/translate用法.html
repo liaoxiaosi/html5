@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>translate用法</title>
+		<style>
+			.box{
+				width: 200px; height:100px ;
+				background: #6495ED;
+				
+			}
+			label{
+				display: block;
+				margin-top: 90px;
+			}
+			
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded',function(){
+				var ebox=document.querySelector('.box');
+				var btnx=document.querySelector('#btnchangex');
+				var btny=document.querySelector('#btnchangey');
+				var btnz=document.querySelector('#btnchangez');
+				
+				btnx.oninput=function(){
+					ebox.style.transform='translateX('+this.value+'px)';
+				}
+				btny.oninput=function(){  
+					ebox.style.transform='translateY('+this.value+'px)';
+				}
+				btnz.oninput=function(){
+					ebox.style.transform='perspective(80px) translateZ('+this.value+'px)';
+				}
+			
+			
+			})
+			
+			
+			
+		</script>
+		
+	</head>
+	<body>
+		<div class="box"></div>
+			<label for=" btnchangex">btnchangex</label>
+			<input type="range" id="btnchangex" />
+			
+			<label for=" btnchangey">btnchangey</label>
+			<input type="range" id="btnchangey" />
+			
+			<label for=" btnchangez">btnchangez</label>
+			<input type="range" id="btnchangez" />
+	
+			
+		
+	</body>
+</html>

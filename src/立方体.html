@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				position:relative;
+				perspective: 0px;
+				transform-style: preserve-3d;	
+				transform: perspective(1600px)  rotateX(45deg) rotateY(45deg) rotateZ(45deg);
+				/*animation: zd 10s linear infinite;*/
+			}
+			
+			/*@keyframes zd{
+				from{transform:perspective(1000px) rotateX(30deg) rotateY(30deg) ;}
+				to{transform:perspective(1000px) rotateX(360deg) rotateY(360deg) ;}
+				
+			}*/
+			.solid{
+				height:200px;
+				width:200px;
+				/*opacity: 0.3;*/
+				
+				position:absolute;
+				top:20%;
+				left:80%;
+				text-align: center;
+				line-height: 200px;
+				font-size:20px;
+				 margin:-100px 0 0 -100px;
+			}
+			.top{
+				transform: translateZ(200px);
+				background: deepskyblue;
+				
+			}
+			.bottom{
+				background: yellow;
+			}
+			.left{
+				transform: rotateY(90deg) translateX(-100px) translateZ(100px);
+				background: darkgoldenrod;
+			}
+			.right{
+				transform: rotateY(90deg) translateX(-100px) translateZ(-100px);
+				background:blueviolet;
+			}
+			.before{
+				transform:rotateX(90deg) translateY(100px) translateZ(100px);
+				background:greenyellow;
+				
+			}
+			.after{
+				transform:  rotateX(90deg) translateY(100px) translateZ(-100px);
+				background:pink;
+			}
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		<div  id="box">
+			<div class="top solid">top</div>
+			<div class="bottom solid">bottom</div>
+			<div class="left solid">left</div>
+			<div class="right solid">right</div>
+			<div class="before solid">before</div>
+			<div class="after solid">after</div>
+		</div>

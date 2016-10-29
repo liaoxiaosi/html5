@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图片旋转放大缩小</title>
+		<style>
+		/*  顺时针旋转   放大图片   */
+			.box{
+				margin: 100px;
+				width:40px;
+				height: 40px;
+				transition: all 2s; 
+			}
+			.container1{
+				width:40px;
+				height: 40px;
+			}
+			.box:hover{
+				transform: rotate(360deg) scale(3);
+			}
+			
+			.box2{
+				margin: 110px;
+				width: 100px;
+				height: 100px;
+				transition: all 2s;
+			}
+			.container2{
+				width: 100px;
+				height: 100px;
+				
+			}
+			.box2:hover{
+				transform: rotate(360deg) scale(0.3);
+			}
+			
+			
+			.box3{
+				margin: 110px;
+				width: 150px;
+				height: 150px;
+				transition: all 2s;
+			}
+			.container3{
+				width: 150px;
+				height: 150px;
+				
+			}
+			.box3:hover{
+				transform: rotate(-360deg) scale(0.3);
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<!--顺时针旋转   放大图片-->
+		<div class="box">
+			<img class="container1" src="images/100.jpg">
+			
+		</div>
+		
+		<!--顺时针旋转   缩小图片-->
+		<div class="box2">
+			<img class="container2" src="images/yy_3.jpg">
+			
+		</div>
+		
+		<!--逆时针旋转   缩小图片-->
+		<div class="box3">
+			<img class="container3" src="images/yy_6.jpg">
+			
+		</div>
+	</body>
+</html>

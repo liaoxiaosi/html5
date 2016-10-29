@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>会话状态的保存及还原</title>
+	</head>
+	<body>
+		<canvas>你的浏览器版本太low了。赶紧升级吧</canvas>
+		<script>
+			document.addEventListener('DOMContentLoaded',function(){
+				//第一步：获取canvas节点
+				var canvas=document.querySelector('canvas');
+				//获取绘画上下文
+				var ctx=canvas.getContext('2d');
+				ctx.width=4;
+				
+				ctx.moveTo(20,20);
+				ctx.lineTo(70,20);
+				ctx.lineTo(170,20);
+				ctx.lineTo(170,30);
+				ctx.lineTo(170,30);
+				ctx.lineTo(20,30);
+				ctx.fillStyle='#f00';
+				ctx.stroke();
+				ctx.fill();
+				
+				
+				
+				ctx.beginPath();
+				
+				ctx.moveTo(20,40);
+				ctx.lineTo(90,40);
+				ctx.lineTo(210,40);
+				ctx.lineTo(210,60);
+				ctx.lineTo(210,60);
+				ctx.lineTo(20,60);
+				ctx.fillStyle='#ff0';
+				ctx.stroke();
+				ctx.fill();
+				
+				
+				ctx.beginPath();
+				
+				ctx.moveTo(20,70);
+				ctx.lineTo(100,70);				
+				ctx.strokeStyle='#00f';
+				ctx.stroke();
+				ctx.fill();
+				
+				
+				
+				
+				
+				
+			})
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>无缝轮播图</title>
+		<style>
+			.carousel{
+				margin: 100px;
+				width: 150px;
+				height: 200px;
+				border: 1px solid slateblue;
+				text-align: center;
+				overflow: hidden;
+				position: relative;
+			}
+			ul,li{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			ul{
+				width: 150px;
+				height: 200px;
+				animation: scrollpic 15s infinite ;
+			}
+			.carousel nav{
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				margin: 10px;
+				overflow: hidden;
+			}
+			.carousel nav span{
+				float: left;
+				margin:  0 3px;
+				width: 20px;
+				height: 4px;
+				background: #ddd;
+				border-radius: 4px;
+				
+			}
+			.carousel nav span:last-child{
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-color:#f00 ;
+				animation:light 15s infinite ;
+			}
+			
+			/*轮播运动   需要移动5次   5*200=1000px   */
+			@keyframes scrollpic{
+				0%{}
+				15%{transform: translateY(0);}
+				
+				20%{transform: translateY(-200px);}
+				35%{transform: translateY(-200px);}
+				
+				40%{transform: translateY(-400px);}
+				55%{transform: translateY(-400px);}
+				
+				60%{transform: translateY(-600px);}
+				75%{transform: translateY(-600px);}
+				
+				80%{transform: translateY(-800px);}
+				95%{transform: translateY(-800px);}
+				
+				100%{transform: translateY(-1000px);}
+				
+				
+			}
+			
+			@keyframes light{
+			0%{}
+			15%{left:0;}
+
+			20%{left:26px;}
+			35%{left:26px;}
+
+			40%{left:52px;}
+			55%{left:52px;}
+
+			60%{left:78px;}
+			75%{left:78px;}
+
+			80%{left:104px;}
+			95%{left:104px;}
+			95.1%{left:0;}
+
+			100%{left:0;}
+		}
+			
+		</style>
+	</head>
+	<body>
+		<div class="carousel">
+		<ul>
+			<li><img src="img/1.jpg" alt=""></li>
+			<li><img src="img/10.jpg" alt=""></li>
+			<li><img src="img/11.jpg" alt=""></li>
+			<li><img src="img/7.jpg" alt=""></li>
+			<li><img src="img/3.jpg" alt=""></li>
+			<li><img src="img/7.jpg" alt=""></li>
+		</ul>
+		<nav>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</nav>
+	</div>
+	</body>
+</html>

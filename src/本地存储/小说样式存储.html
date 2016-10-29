@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>本地存储练习  小说</title>
+		<style>
+			.read{
+				margin: 0 auto;
+				width:453px ;
+				height:700px;
+				background: url(img/阅读器背景2.JPG) no-repeat;
+				background-size:contain ;
+				
+				
+			}
+			
+			section{
+				width:453px ;
+				height:700px;
+				overflow: scroll;
+				
+			}
+			
+			
+			
+		</style>
+		
+	</head>
+	<body>
+		
+		<div class="read">
+			<section>
+				<h2> 1.他噙着薄笑【1】   </h2>
+				<p>
+				看着景佳人离开，景美惠和景美雪都疑惑问：
+“大姐，她怎么那么听你的话，要平时你们早吵起来了。”
+“是啊，今天上午还看你们的关系那么要好？20年的宿怨，怎么一夕之间化解了？”
+景美琳得意一笑：“山人自有妙计。”
+她当然不会把威胁景佳人的方案说出来，一旦她们知道了，效仿她，就又多了两个情敌。
+##########################
+景佳人赶到后院，看见硕大的挖机挥舞下来——
+杂货房已经变成了泥坑。
+“停下，你们给我停下！你们都在做什么？！”
+管家站在中心指挥，见景佳人不顾危险冲过来：“表小姐，这里很危险，快出去。”
+“没有经过我的同意，谁也不允许动这个后花园！”
+这里，每一草一木都是她和尚彦轩的回忆。
+“抱歉，老爷已经答应修改这个后花园。”
+“他想打通两个别墅，把城墙拆了就可以了，为什么要动别的地方？”
+“西少爷喜欢这中心的温泉，说是想利用这水源，做一个造型更大更漂亮的音乐温泉喷水池。池子里养一些漂亮的锦鲤，会是非常漂亮的一道景观。”
+景佳人瞬间想到岛屿里的温泉和锦鲤，心里更是愤怒和难堪。
+景家的温泉池在后花园的中心位置，四周都是花圃和小径，如果要扩大和重建，岂不是要把四周的花圃也全部铲除？
+她刚想到这里，挖机已经调转方向——
+她大声阻止，可是嘈杂声和机器轰鸣声震耳欲聋，盖过她的声音。
+她忙朝中心跑去。
+管家来不及抓住她，其他人忙着自己工作也没注意到她。
+她突然蹿过去，挖手从天而降，将鲜花拼成的“佳人”挖去一半。
+景佳人只感觉脚下的地面一阵动荡，土地弓起，裂开，她身体猛地栽了一跟头，滚到附近的草丛里。
+施工队这才发现她的存在：“怎么会突然跑了个女人出来？”
+管家带着几个仆人匆匆过来：“表小姐，表小姐，你没事吧？”
+景佳人一身的泥土，从地上爬起来，头发凌乱地也沾满了泥巴。
+她看着那被毁掉的花圃，眼前却浮现出她和尚彦轩一颗颗播种的情景……
+不知道为什么，喉头忽然变得哽咽，眼睛里也弥漫出汹涌的大雾。
+没有了，她跟尚彦轩的一切都毁了。
+甚至连回忆都没能守得住？！
+“表小姐，你有没有受伤？”管家过来扶她。
+“都走开，别碰我！”她用力挥手，这才发现手臂在滚落时被锐利的石头划伤，一道不小的口子，鲜血混着泥土很是心惊。
+“为什么要毁掉这里？”她一定是失去了理智，大声地质问。
+“这是老爷的意思……这里是景家，一切做主权都由老爷说了算。”
+哈，是啊，这里是景家，她根本没有说话的权利。
+“表小姐如果有什么不满，可以找老爷商议，不要贸然做出这样危险的举动来！”
+手机请访问：http://m.shu86.com 更快更省流量！	
+
+				</p>
+	
+			</section>
+		<div class="changeSize">
+	        <input type="button" id="btnBig" value="A+" />
+	        <input type="button" id="btnSmall" value="A-" /> 字体颜色：
+	        <input class="wordColor" type="color" list> 背景：
+	        <input type="text" class="bg" list="bglist" />
+	        <datalist id="bglist">
+	            <option value="img/阅读器背景2.JPG" label="阅读器背景">阅读器背景</option>
+	            <option value="img/阅读器背景浅.jpg" label="阅读器背景浅">阅读器背景浅</option>
+	            <option value="img/阅读器背景红.jpg" label="阅读器背景红">阅读器背景红</option>
+	        </datalist>
+    </div>
+			
+			
+		</div>
+		<script>
+			document.addEventListener('DOMContentLoaded',function(){
+				var read=document.querySelector('.read');
+				var btnsmall=document.querySelector('#btnBig');
+				var btnbig=document.querySelector('#btnBig');
+				var wordcolor=document.querySelector('.wordColor');
+				var ebg=document.querySelector('.bg');
+				
+				var settings=localStorage.setItem('settings');
+				settings=settings?JSON.parse(settings):{fontSize:16};
+				
+				//初始化
+				init();
+				
+				btnbig.onclick=function(){
+					changeSize(2);
+				}
+				btnsmall.onclick=function(){
+					changeSize(-2);
+				}
+				
+				wordcolor.onchange=function(){
+					read.style.color=this.value;
+					
+					settings.color=this.value;
+					localStorage.setItem('settings',JSON.stringify(settings));
+				}
+				
+				ebg.onchange=function(){
+					var bgimg='url('+this.value+')';
+					read.style.backgroundImage=bgimg;
+					settings.background=bgimg;
+					localStorage.getItem('settings',JSON.stringify(settings));
+					
+				}
+				
+				function init(){
+					if(settings.fontSize())read.style.fontSize=settings.fontSize+'px';
+					if(settings.color)read.style.color=settings.color;
+					if(settings.background)read.style.background=settings.background;
+					
+				}
+				function changeSize(){
+					 settings.fontSize += num;
+		            if (settings.fontSize < 12) {
+		                alert("12号字体已经是最小的了");
+		                settings.fontSize = 12;
+		            }
+		            read.style.fontSize = settings.fontSize + 'px';
+		            localStorage.setItem('settings', JSON.stringify(settings));
+
+				}
+				
+			});
+			
+
+		</script>
+
+		
+		
+		
+	</body>
+</html>

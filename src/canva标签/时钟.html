@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		
+			<script>
+				/*
+				 
+				 *canvas时钟:
+				 * 画表盘
+				 * 刻度
+				 * 时针、分针、秒针
+				 * 其他信息
+				 * 时钟走动效果
+				 * 
+				 * 
+				 * */
+			document.addEventListener('DOMContentLoaded',function(){
+			
+				var canvas=document.querySelector('canvas');
+				
+				canvas.width=canvas.height=600;
+				var ctx=canvas.getContext('2d');
+				
+				//中心
+				var center={x:canvas.width/2,y:canvas.height/2};
+				ctx.save();
+				
+				//画表盘:外表盘
+				ctx.arc(center.x,center.y,100,0,2*Math.PI);
+				ctx.stroke();
+				ctx.lineWidth=3;
+				
+				
+				ctx.restore();
+				//画表盘:内表盘
+				ctx.beginPath();
+				ctx.arc(center.x,center.y,94,0,2*Math.PI);
+				ctx.stroke();
+				
+				
+				ctx.beginPath();
+				//刻度：把画笔点移动到12，3，6，9点刻度位置
+				//圆心还在圆点坐标位置
+				ctx.translate(center.x,center.y);
+				ctx.moveTo(0,-94);
+				ctx.lineTo(0,-87);
+				
+				ctx.rotate(Math.PI/2);   //把原点设为旋转90度后处
+//				ctx.moveTo(center.x,center.y);  //回到圆心
+//				ctx.rotate(90*Math.PI/180);  //旋转90度				
+				ctx.lineWidth=4;
+				ctx.stroke();
+				
+	
+				ctx.moveTo(0,-94);
+				ctx.lineTo(0,-87);			
+				ctx.rotate(Math.PI/2);   //把原点设为旋转90度后处
+//				ctx.moveTo(center.x,center.y);  //回到圆心
+//				ctx.rotate(90*Math.PI/180);  //旋转90度
+				
+				ctx.lineWidth=4;
+				ctx.stroke();
+				
+				
+				ctx.moveTo(0,-94);
+				ctx.lineTo(0,-87);			
+				ctx.rotate(Math.PI/2);   //把原点设为旋转90度后处
+//				ctx.moveTo(center.x,center.y);  //回到圆心
+//				ctx.rotate(90*Math.PI/180);  //旋转90度
+				
+				ctx.lineWidth=4;
+				ctx.stroke();
+				
+				
+				ctx.moveTo(0,-94);
+				ctx.lineTo(0,-87);			
+				ctx.rotate(Math.PI/2);   //把原点设为旋转90度后处
+//				ctx.moveTo(center.x,center.y);  //回到圆心
+//				ctx.rotate(90*Math.PI/180);  //旋转90度
+				
+				ctx.lineWidth=4;
+				ctx.stroke();
+				
+				
+				//画秒针刻度
+				ctx.beginPath();
+				ctx.lineWidth=1;
+				for(var i=0;i<360;i++){
+					ctx.rotate(6*Math.PI/180);
+					ctx.moveTo(0,-94);
+					ctx.lineTo(0,-87);	
+				}
+				ctx.stroke();
+				
+				var date=new Date();
+				var hour=date.getHours();
+				var min=date.getMinutes();
+				var sec=date.getSeconds();
+				var day=date.getDay();
+				var tody=date.getDate();
+				
+				//时针、分针、秒针
+				
+				
+				ctx.save();
+				ctx.beginPath();
+//				ctx.rotate();
+				ctx.moveTo(0,0);
+				ctx.lineTo(0,-50);
+				ctx.lineWidth=5;
+				ctx.stroke();
+				ctx.restore();
+				
+				
+				ctx.save();
+				ctx.beginPath();
+				ctx.rotate(min*360/60*Math.PI/180);
+				ctx.moveTo(0,0);
+				ctx.lineTo(0,-65);
+				ctx.lineWidth=3;
+				ctx.stroke();
+				ctx.restore();
+				
+				
+				//一圈是60秒   360度     60/360=sec/x    x==>要转的角度
+				ctx.save();
+				ctx.beginPath();
+				ctx.rotate(sec*360/60*Math.PI/180);
+				ctx.moveTo(0,0);
+				ctx.lineTo(0,-75);
+				ctx.lineWidth=1;
+				ctx.stroke();
+				ctx.restore();
+				
+				
+				
+			});	
+			</script>
+	</head>
+	<body>
+		<canvas width="500" height="500">你的浏览器不支持canvas，请升级</canvas>
+	
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title>css3实现旋转的太极图</title>
+    <style>
+        body{margin: 0;padding: 0;}
+        #container{
+            position: relative;
+            width: 500px;height: 250px; background: #fff; border-radius: 100%; margin: 100px auto;
+            border: 6px solid #000; border-bottom-width: 250px;
+            animation:animat 6s linear infinite;
+        }
+        #container:before,#container:after{
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border-radius: 100%;
+            top: 50%;
+            border: 90px solid;
+        }
+        #container:before{
+            background: #fff;left: 0;border-color: #000;
+        }
+        #container:after{
+            background: #000;right: 0;border-color: #fff;
+        }
+        /*@keyframes animat{
+            0%   { transform: rotate(0deg);}
+            100% { transform: rotate(360deg);}
+        }*/
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>

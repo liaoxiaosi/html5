@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>鼠标移上去淡出对话框</title>
+		<style>
+			body {
+				padding: 100px;
+			}
+			
+			.guanggao {
+				position: relative;
+				top: -70px;
+				width: 230px;
+				height: 60px;
+				background: red;
+				border: 1px solid red;
+				color: white;
+				border-radius: 10px;
+				text-align: center;
+				line-height: 60px;
+				
+			}
+			
+			.guanggao:after {
+				content: '';
+				position: absolute;
+				left: 45%;
+				top: 58px;
+				border-style: solid;				
+				border-width: 15px;
+				border-style: solid;
+				border-color: transparent;
+				border-top-color: red;
+				box-sizing: border-box;
+			}
+			
+			a:hover.y{
+				top:0;
+				
+				
+			}
+			
+			
+			
+			
+		</style>
+
+	</head>
+
+	<body>
+		<div class="guanggao  y">不得不说，是一家广告公司</div>
+		<a href="">百度</a>
+	</body>
+
+</html>

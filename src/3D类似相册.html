@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>3D类似相册旋转</title>
+		<style>
+			.album{
+				position: relative;
+				margin: 200px auto;
+				transform-style:preserve-3d ;
+				perspective: 0px;
+				width: 600px;
+				transform:perspective(1600px) rotateZ(20deg) rotateX(40deg) ;
+				
+			}
+			
+			.album img{
+				
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			
+			
+		</style>
+		<script>
+		
+		/*计算出角度  把图片圈起来*/
+			document.addEventListener('DOMContentLoaded',function(){
+				var eimg=document.querySelectorAll('.album img');
+				var ealbum=document.querySelector('.album');
+				//转动的角度
+				var angle=360/eimg.length;
+				
+				for(var i=0;i<eimg.length;i++){
+					var radian=angle/2*Math.PI/180;
+					
+					var x=133/2/Math.tan(radian);
+					
+					eimg[i].style.transform='rotateY('+i*angle+'deg) translateZ('+x+'PX)';
+					
+				}
+				
+				
+				//拖拽效果    xangle=40 因为样式中写了 rotateX(40deg)
+				var xangle=40;
+				var yangle=0;
+				
+				document.onmousedown=function(e){
+					var startx=e.clientX;
+					var starty=e.clientY;
+					
+					document.onmousemove=function(e){
+						var endx=e.clientX;
+						var endy=e.clientY;
+						
+						//转动的角度=原先的角度+转动后的角度     乘小数是为了解决转换角度的问题
+						xangle-=(endy-starty)*0.2;
+						yangle+=(endx-startx )*0.1;
+						
+						//改变.album的transform属性  还是有点不理解
+						ealbum.style.transform='perspective(1600px) rotateX('+xangle+'deg) rotateY('+yangle+'deg)';
+						
+						e.preventDefault();
+						//更新start值
+						startx=endx;
+						starty=endy;
+	
+					
+					}
+					// 阻止浏览器默认行为（图片的拖动）
+				e.preventDefault();
+					
+					
+				}
+				
+				document.onmouseup = function(){
+					document.onmousemove = null;
+				}
+				
+				
+			})
+//			
+			
+		</script>
+	
+	</head>
+	<body>
+		<div class="album">
+			<img src="img/1.jpg" />
+			<img src="img/2.jpg" />
+			<img src="img/3.jpg" />
+			<img src="img/4.jpg" />
+			<img src="img/5.jpg" />
+			<img src="img/6.jpg" />
+			<img src="img/7.jpg" />
+			<img src="img/8.jpg" />
+			<img src="img/9.jpg" />
+			
+
+			
+			
+		</div>
+		
+		
+		
+		
+	</body>
+</html>

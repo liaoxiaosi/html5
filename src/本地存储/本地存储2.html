@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		
+		<script>
+			document.addEventListener('DOMContentLoaded',function(){
+				
+				var save=document.querySelector('.save');
+				var get=document.querySelector('.read');
+				var  ename=document.querySelector('#name');
+				var res=document.querySelector('.res');
+				save.onclick=function(){
+					//写入
+				localStorage.setItem('name',ename.value);
+//					sessionStorage.setItem('name','blue');
+				}
+				
+				get.onclick=function(){
+					var  result=localStorage.getItem('name');
+					res.innerHTML=result;
+					
+				}
+				console.log(sessionStorage.getItem('name'));
+				
+				
+			})
+		
+			
+		</script>
+	</head>
+	<body>
+		<input type="text" id="name" />
+		<button class="save">保存</button>
+		<button class="read">读取</button>
+		<div class="res"> </div>
+	</body>
+</html>

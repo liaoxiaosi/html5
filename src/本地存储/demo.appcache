@@ -1,0 +1,14 @@
+CACHE MANIFEST
+#第一行文字，用于声明这是一个manifest缓存文件列表（必须写）
+
+CACHE:
+css/style.css
+img/1.jpg
+img/2.jpg
+js/common.js
+
+NETWORK:
+img/3.jpg
+
+FALLBACK:
+img/1.jpg img/100.jpg

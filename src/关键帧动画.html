@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>关键帧动画</title>
+		<style>
+			img{
+				border-radius:100%;
+				animation: zd 10s linear infinite;
+				transform: rotate(20deg);
+			}
+			/*定义关键帧动画
+			 * 格式：@keyfranmes 名字（）；
+			 * 
+			 * 使用关键帧动画
+			 * 格式：animation:动画名称
+			 */
+			
+			
+			@keyframes zd{
+				from{transform: rotate(30deg);}
+				to{transform:rotate(360deg) ;}
+				
+			}
+			
+		</style>
+	</head>
+	<body>
+		<img src="images/100.jpg"/>
+	</body>
+</html>

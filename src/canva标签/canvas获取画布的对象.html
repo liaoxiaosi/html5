@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>canvas获取画布的对象</title>
+		
+		<style>
+			canvas{
+				color: red;
+				border: 2px solid mediumaquamarine;
+				
+			}
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded',function(){
+				//获取canvas节点
+				
+				var canvas=document.querySelector('canvas');
+				canvas.width=600;
+				canvas.height=600;
+				
+				//获取画布对象（上下文）
+				var ctx=canvas.getContext('2d');//3d  webgl
+				console.log(ctx);
+
+/*
+				//设置起点
+				ctx.moveTo(0,200);
+				
+				
+				//路径 
+				ctx.lineTo(100,100);    
+				ctx.lineTo(300,300);
+*/				
+
+
+			//画正方形
+//			ctx.moveTo(300,100);
+//			ctx.lineTo(400,100);
+//			ctx.lineTo(400,200);
+//			ctx.lineTo(300,200);
+//			ctx.lineTo(300,100);
+				//描边
+//				ctx.stroke();  //默认 是黑色
+//				
+//				ctx.fillStyle='#f00';
+//				ctx.fillRect(20,20,150,100);
+				
+//				var ctx2=canvas.getContext('2d');
+//				
+//				ctx2.arc(100,75,50,0,2*Math.PI);
+//				ctx2.stroke();
+//				ctx2.fillStyle='#00FF7F';
+				
+				//边框的宽度以及颜色
+				ctx.lineWidth=4;
+				ctx.fillStyle='#FF0000'
+				
+				//三角形、正方形
+				
+				ctx.moveTo(200,100);
+				ctx.lineTo(300,100);
+				ctx.lineTo(300,150);
+				ctx.closePath();     //闭合
+				ctx.stroke();
+				
+				ctx.fillStyle='#008000';
+				ctx.fill();
+			
+				
+				ctx.moveTo(0,30);
+				ctx.lineTo(100,30);
+				ctx.lineTo(100,130);
+				ctx.lineTo(0,130);
+				ctx.lineTo(0,30);
+				ctx.stroke();
+				
+				ctx.fillStyle='#7CFC00';
+				ctx.fill();
+			
+				/* arc(x,y,radius,startAngle,endAngle,counterclockwise)   画圆弧/画圆
+    - x,y：圆心坐标。
+    - radius：半径大小。
+    - startAngle:绘制开始的角度（x轴为0度）。 
+    - endAngel:结束的角度，注意是弧度。
+    - counterclockwise：是否是逆时针。true是逆时针，false：顺时针
+*/		ctx.moveTo(300,300);
+		
+		ctx.arc(canvas.width/2,canvas.height/2,70,0,2*Math.PI,false);
+		ctx.stroke();
+		ctx.fillStyle='palevioletred';
+		ctx.fill();
+			
+			})
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<canvas>你的浏览器不支持canvas标签，请升级</canvas>
+	</body>
+</html>

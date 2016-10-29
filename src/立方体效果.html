@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>作业立方体效果</title>
+		<style>
+			.box{
+				position: relative;
+				/*视角*/
+				perspective: 0px;
+				
+				/*运动效果    3D*/
+				transform-style: preserve-3d;   
+				transform: perspective(1600px) rotateX(40deg) rotateY(40deg) rotateZ(40deg); 
+				/*animation: zd 10s linear infinite;*/
+			
+			}
+			/*@keyframes zd{
+				from{transform:perspective(1000px) rotateX(30deg) rotateY(30deg) ;}
+				to{transform:perspective(1000px) rotateX(360deg) rotateY(360deg) ;}
+				}*/
+			
+			.face{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				top: 50%;
+				left: 80%;
+				text-align: center;
+				font-size: 30px;
+				line-height: 100px;
+				
+			}
+			
+			.top{
+				transform: translateZ(100px);
+				background: skyblue;
+				
+			}
+			.bottom{
+				background: springgreen;
+			}
+			.left{
+				background: greenyellow;
+				transform: rotateY(90deg) translateX(-50px) translateZ(-50px);
+			}
+			.right{
+				transform: rotateY(-90deg) translateX(-50px) translateZ(50px);
+				background: lightpink;
+				
+			}
+			
+			.before{
+				background: lightpink
+				transform: rotateX(90deg) translateY(50px) translateZ(50px);
+			}
+			
+			.back{
+				background: slateblue;
+				transform: rotateX(90deg) translateY(50px) translateZ(-50px);
+			}
+
+			
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded',function(){
+				var face=document.querySelectorAll('.face');
+				
+				var box=document.querySelector('.box');
+				
+
+				//拖拽效果    xangle=40 因为样式中写了 rotateX(40deg)
+				var xangle=40;
+				var yangle=0;
+				
+				document.onmousedown=function(e){
+					var startx=e.clientX;
+					var starty=e.clientY;
+					
+					document.onmousemove=function(e){
+						var endx=e.clientX;
+						var endy=e.clientY;
+						
+						//转动的角度=原先的角度+转动后的角度     乘小数是为了解决转换角度的问题
+						xangle-=(endy-starty)*0.2;
+						yangle+=(endx-startx )*0.1;
+						
+						//改变.album的transform属性  还是有点不理解
+						box.style.transform='perspective(1600px) rotateX('+xangle+'deg) rotateY('+yangle+'deg)';
+						
+						e.preventDefault();
+						//更新start值
+						startx=endx;
+						starty=endy;
+	
+					
+					}
+					// 阻止浏览器默认行为（图片的拖动）
+				e.preventDefault();
+					
+					
+				}
+				
+				document.onmouseup = function(){
+					document.onmousemove = null;
+				}
+			
+			
+			})
+		</script>
+
+		
+	</head>
+	<body>
+		<div class="box">
+			<div class=" face top"> top</div>
+			<div class=" face bottom"> bottom</div>
+			<div class=" face left"> left</div>
+			<div class=" face right"> right</div>
+			<div class=" face before"> before</div>
+			<div class=" face back"> back</div>
+			
+			
+		</div>
+	</body>
+</html>

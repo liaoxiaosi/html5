@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>制作饼图</title>
+		<style type="text/css">
+			canvas{border: 2px solid #ddd;}
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded',function(){
+				
+				
+				
+					
+				var canvas=document.querySelector('canvas');
+				canvas.width=canvas.height=500;
+				
+				var ctx=canvas.getContext('2d');
+				
+				//重新设置画布上的圆点位置
+				ctx.translate(200,200);
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.arc(0,0,100,-10*Math.PI/180,30*Math.PI/180,false);
+				ctx.fillStyle='#98FB98';
+				ctx.fill();
+
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.arc(0,0,100,-40*Math.PI/180,-10*Math.PI/180,false);
+				ctx.fillStyle='red';
+				ctx.fill();
+				
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.arc(0,0,100,-80*Math.PI/180,-40*Math.PI/180,false);
+				ctx.fillStyle='deepskyblue';
+				ctx.fill();
+				
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.arc(0,0,100,-160*Math.PI/180,-80*Math.PI/180,false);
+				ctx.fillStyle='yellow';
+				ctx.fill();
+				
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.arc(0,0,100,-250*Math.PI/180,-160*Math.PI/180,false);
+				ctx.fillStyle='palevioletred';
+				ctx.fill();
+				
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.arc(0,0,100,-340*Math.PI/180,-240*Math.PI/180,false);
+				ctx.fillStyle='orange';
+				ctx.fill();
+				
+				ctx.translate(10,20);
+				ctx.beginPath();
+				ctx.moveTo(70,90);
+				ctx.lineTo(20,110);
+				ctx.lineTo(20,60);
+				ctx.stroke();
+				ctx.strokeText('800',50,90);
+				ctx.strokeStyle='black';
+				
+				ctx.beginPath();
+				ctx.translate(70,-80);
+				ctx.moveTo(50,80);
+				ctx.lineTo(50,80);
+				ctx.lineTo(-20,60);
+				ctx.stroke();
+				ctx.strokeText('299',50,90);
+				ctx.strokeStyle='black';
+				
+				ctx.beginPath();
+				ctx.translate(20,-35);
+				ctx.moveTo(30,30);
+				ctx.lineTo(30,10);
+				ctx.lineTo(-20,60);
+				ctx.stroke();
+				ctx.strokeText('299',20,45);
+				ctx.strokeStyle='black';
+				
+				ctx.beginPath();
+				ctx.translate(-70,-25);
+				ctx.moveTo(50,30);
+				ctx.lineTo(20,20);
+				ctx.lineTo(20,60);
+				ctx.stroke();
+				ctx.strokeText('299',15,15);
+				ctx.strokeStyle='black';
+				
+				ctx.translate(-130,80);
+				ctx.beginPath();
+				ctx.moveTo(-40,50);
+				ctx.lineTo(-20,70);
+				ctx.lineTo(20,60);
+				ctx.stroke();
+				ctx.strokeText('800',-40,50);
+				ctx.strokeStyle='black';
+				
+				ctx.translate(15,-80);
+				ctx.beginPath();
+				ctx.moveTo(-20,50);
+				ctx.lineTo(10,70);
+				ctx.lineTo(40,60);
+				ctx.stroke();
+				ctx.strokeText('400',-40,50);
+				ctx.strokeStyle='black';
+			})
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<canvas width="500" height="500">你的浏览器不支持canvas标签，请升级你的浏览你</canvas>
+	</body>
+</html>

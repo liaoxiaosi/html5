@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>锚点实现切换要陪合target使用</title>
+		<style>
+			body{
+				padding: 100px;
+			}
+			.box{
+				list-style: none;
+				width:200px;
+				height: 240px;
+				border: 2px solid lightblue;
+				position: relative;
+				overflow: hidden;
+				background: url(images/1.jpg) no-repeat center/contain;
+				/*background: url(images/1.jpg) no-repeat center;background-size: contain;
+*/			}
+			.box li {
+				position: absolute;
+				width:200px;
+				height: 240px;
+				top: 0;
+				left:-240px;
+				transition: all 1s;opacity: 0;
+			}
+			.box li img{
+				width:240px;
+				height: 200px;
+			}
+			
+			.box li:target{
+				left: 0;opacity: 1;
+			}
+			
+			nav{
+				display: inline-block;padding: 3px 5px;
+				border-radius: 2px;transition: all 0.2s;
+				color: #333;
+			}
+			nav a:hover{
+				background-color: #fc0;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<h3>沙滩上的美女都走光了，用代码把她找出来吧</h3>
+		
+		<ul class="box">
+			<li id="yy1 "> <img src="images/yy_2.png"/></li>
+			<li id="yy2 "> <img src="images/yy_1.jpg"/></li>
+			<li id="yy3 "> <img src="images/yy_5.jpg"/></li>
+			<li id="yy4 "> <img src="images/yy_3.jpg"/></li>
+			<li id="yy5 "> <img src="images/yy_4.png"/></li>
+			
+		</ul>
+		<nav>
+			
+			<a href="#yy1">美女1</a>
+			<a href="#yy2">美女2</a>
+			<a href="#yy3">美女3</a>
+			<a href="#yy4">美女4</a>
+			<a href="#yy5">美女5</a>
+			
+		</nav>
+			
+			
+	
+	
+		
+		
+	</body>
+</html>

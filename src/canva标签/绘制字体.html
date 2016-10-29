@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		canvas{border:1px solid #ddd;}
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded',function(){
+					// 1)获取canvas节点
+			var canvas = document.querySelector('canvas');
+			canvas.width = canvas.height = 600;
+
+			// 2)获取画布对象（上下文）
+			var ctx = canvas.getContext('2d');
+			
+			ctx.strokeText('如果这都不算爱',200,200);
+			ctx.strokeStyle='cadetblue';
+			
+//			ctx.stroke();
+//			ctx.fill();
+		
+		
+			ctx.beginPath();
+			
+			//生成一个img 节点
+			var img=new Image();
+			img.src='img/1.jpg';
+			
+			//注意，必须等图片加载完成后才能进行此操作
+			window.onload=function(){
+				
+			//等比例公式：height=width*imgheight/imgwidth
+			//ctx.drawImage(img,sx,sy,swidth,sheight,x,y,width,height)
+			ctx.drawImage(img,0,0,300,300);
+			ctx.drawImage(img,30,30,100,100,300,190,300,300);
+			
+			
+			
+			}
+		
+		});
+		
+		</script>
+	</head>
+	<body>
+		<canvas>你的浏览器不支持canvas标签，请升级你的浏览你</canvas>
+	</body>
+</html>

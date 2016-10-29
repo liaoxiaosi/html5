@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			canvas{
+				border:1px solid black;
+			}
+		</style>
+		<script>
+			document.addEventListener("DOMContentLoaded",function(){
+				var canvas=document.querySelector("canvas");
+				var ctx=canvas.getContext("2d");
+				canvas.width=canvas.height=500;
+				ctx.translate(200, 200);
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.arc(0,0,150,120*Math.PI/180,-70*Math.PI/180,false); 
+				ctx.stroke();
+				ctx.closePath();
+				ctx.fillStyle="#FF6600";
+				ctx.fill();
+			
+				
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.arc(0,0,150,-70*Math.PI/180,-44*Math.PI/180,false); 
+				ctx.stroke();
+				ctx.closePath();
+				ctx.fillStyle="#00FF00";
+				ctx.fill();
+				
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.arc(0,0,150,-44*Math.PI/180,-20*Math.PI/180,false); 
+				ctx.stroke();
+				ctx.closePath();
+				ctx.fillStyle="#0000FF";
+				ctx.fill();
+				
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.arc(0,0,150,-30*Math.PI/180,40*Math.PI/180,false); 
+				ctx.stroke();
+				ctx.closePath();
+				ctx.fillStyle="#FFB6C1";
+				ctx.fill();
+				
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.arc(0,0,150,30*Math.PI/180,90*Math.PI/180,false); 
+				ctx.stroke();
+				ctx.closePath();
+				ctx.fillStyle="#00BFFF";
+				ctx.fill();
+				
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.arc(0,0,150,60*Math.PI/180,120*Math.PI/180,false); 
+				ctx.stroke();
+				ctx.closePath();
+				ctx.fillStyle="#8A2BE2";
+				ctx.fill();
+				
+			})
+		</script>
+	</head>  
+	<body>
+		<canvas>
+			  
+		</canvas>
+	</body>
+</html>

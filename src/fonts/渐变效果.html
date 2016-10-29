@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>渐变效果</title>
+		<style>
+			.box{position: relative;
+				margin: 50px;
+				width: 300px;
+				height: 300px;
+				border: 1px solid #f00;
+				border-radius: 10px;
+				/*background: linear-gradient(to right,#f00,#0f0,#ff0,#0ff,#00f);*/
+				
+				background: url(../images/100.jpg) no-repeat 10px 10px ,url(../images/100.jpg) no-repeat 100px 100px #ADD8E6 ;
+				
+				
+				/*background:-webkit-linear-gradient(bottom,#f00,#000,#00f) ;
+				background:-moz-linear-gradient(bottom,#f00,#00f) ;
+				background:-o-linear-gradient(bottom,#f00,#00f) ;
+				background:-ms-linear-gradient(bottom,#f00,#00f) ;*/
+			}
+			
+			.radial{ background-image:-webkit-radial-gradient(center,circle,#f00,#0ff,#ff0) ;}
+			
+			.change{
+				margin: 10px;
+				width: 30px;
+				height: 30px;
+				background-image: -webkit-radial-gradient(center,circle,#f00,#000,#ff0);
+			}
+			.change2{ margin: 10px;
+				width: 30px;
+				height: 30px;
+				
+				background: linear-gradient(to right,#fafafa,#000,#f00);
+				background-image: -webkit-radial-gradient(center,circle,#f00,#0ff,#ff0);
+				 }
+				 
+				 /*老式写法：*/
+         /*   background-image:-webkit-radial-gradient(50% 0,circle closest-corner, #f00,#ff0,#080);
+*/
+            /*标准写法*/
+            /*background-image:radial-gradient(circle closest-corner at 10% 30%, red, blue)*/
+			 .speciel{
+            		display:inline-block;
+            		width:224px;
+            		height:84px;
+            		background:url(../btn_bg.png) no-repeat;
+            		text-align:center;
+            		line-height:61px;
+        	}
+       		.speciel:nth-of-type(1){
+       			background: none;
+       			width: 80px;
+       			height: 100px;
+       			line-height: 80px;
+       			border-image: url(../btn_bg.png) 22 22 33 22 fill/22px 22px 33px 22px repeat;
+       			/*box-shadow:10px 10px 1px rgba(0,0,0,.3)*/
+       		}
+       		
+       		
+       		.speciel:nth-of-type(2){
+       			background: none;
+       			width: 300px;
+       			height: 100px;
+       			line-height: 90px;
+       			border-image: url(../btn_bg.png) 22 22 33 22 fill/22px 22px 33px 22px;
+       			box-shadow:10px 10px 1px rgba(0,0,0,.3)
+       		}
+       		
+			.speciel:nth-of-type(3){
+				
+			background:none;
+            width:100px;height:100px;line-height:84px;
+            border-image:url(../btn_bg.png) 18 18 33 18 fill/18px 18px 33px 18px;
+            box-shadow:10px 10px 2px rgba(0,0,0,.2)
+       		 }
+				 
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+		<div class="box  radial"></div>
+		<button class="change"></button>
+		<button class="change2"></button>
+		
+		
+		<span class="speciel">据说高大上</span>
+		<span class="speciel">据说高大上</span>
+		<span class="speciel">据说高大上</span>
+		
+	</body>
+</html>

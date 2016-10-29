@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>贝塞尔曲线（了解）</title>
+		
+		<script>
+			document.addEventListener('DOMContentLoaded',function(){
+				var canvas=document.querySelector('canvas');
+				var ctx=canvas.getContext('2d');
+				canvas.style.border='#ddd';
+				canvas.width=canvas.height=500;
+				
+				//二次方曲线 
+				/* cpx： 贝塞尔控制点的 x 坐标
+					* cpy： 贝塞尔控制点的 y 坐标
+					* x ： 结束点的 x 坐标
+					* y ： 结束点的 y 坐标 */
+				ctx.moveTo(100,100);
+				
+				ctx.quadraticCurveTo(80,200,200,100);
+				ctx.moveTo(200,100);
+				ctx.quadraticCurveTo(280,20,300,50);
+				ctx.stroke();
+				
+				
+				
+				
+			})
+			
+			
+			
+			
+			
+		</script>>
+	</head>
+	<body>
+		<canvas>赶紧升级</canvas>
+	</body>
+</html>

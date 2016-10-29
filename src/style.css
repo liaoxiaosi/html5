@@ -1,0 +1,184 @@
+
+
+/*对话框*/
+	.container{
+				left: 100px;
+				width: 200px;
+				height: 140px;
+				background: red;
+				position: relative;
+				border: 2px solid red;
+				border-radius: 10%;
+				
+			}
+			.container::after{
+				content: '';
+				width: 0;
+				height: 0;
+				position: absolute;
+				top: 30px;
+				left:-40px ;
+				border: 20px solid transparent;
+				border-right-color:red ;
+				border-radius: 4px;
+			}
+
+
+/*太极*/
+.box{ 
+	position: relative;
+	width: 300px;
+	height: 150px;
+	background: #fff;
+	border-radius: 100%;
+	border: 1px solid #f00;
+	border-top-width: 150px;
+	
+	}
+
+.box::after{
+	content: '';
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	border-radius: 100%;
+	background: red;	
+	top: -50%;
+	left:0;
+	border: 45px solid green;
+
+}
+.box::before{
+	content: '';
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	border-radius: 100%;
+	background:green;	
+	top: -50%;
+	right:0;
+	border: 45px solid red;
+}
+/*
+缺一角*/
+.box2{
+	width: 80px;
+	height: 80px;
+	border-radius: 100%;
+	position: relative;
+	background: lightblue;
+	left: 350px;
+	top: -400px;
+}
+.box2:before{
+	content: '';
+	position: absolute;
+	border: 20px solid white;
+	
+}
+
+
+
+.box3{
+	width: 80px;
+	height: 80px;
+	border-radius: 100%;
+	position: relative;
+	background: red;
+	left: 420px;
+	top: -400px;
+}
+.box3:before{
+	content: '';
+	position: absolute;
+	
+/*	因为半径是40*/
+
+	border: 40px solid transparent;  
+	border-right-color:white ;
+	/*background: black;*/
+	
+}
+/*圆中一点*/
+.box4{
+	width: 100px;
+	height: 100px;
+	background: red;
+	border-radius: 100%;
+	position: relative;
+	left: 520px;
+	top: -400px;
+}
+.box4:before{
+	content: '';
+	position: absolute;
+	border: 20px solid white;
+	border-radius: 100%;
+	left: 50%;
+	top: 50%;
+	
+}
+
+/*一半*/
+.box5{
+	width: 100px;
+	height: 50px;
+	background: cornflowerblue;
+	border-radius: 100%;
+	position: relative;
+	left: 620px;
+	top: -400px;
+	border: 1px solid red;
+	border-bottom-width: 50px;
+}
+.box6{
+	width: 100px;
+	height: 50px;
+	background: red;
+	border-radius: 100%;
+	position: relative;
+	left: 720px;
+	top: -400px;
+	border-right:  100px solid cornflowerblue;
+   	border-bottom: 70px  solid red;
+	
+	
+	/*border: 1px solid #fff;
+	border-bottom-width: 50px;
+	z-index: 99;*/
+}
+/*.box6:after{
+	content: '';
+	position: absolute;
+	width: 100px;
+	height: 50px;
+	background: green;
+	border-radius: 100%;	
+	border: 1px solid #fff;
+	border-top-width: 50px;
+	z-index: 1;
+	
+}*/
+
+
+.box7{
+	 margin: 50px 0;
+   position: absolute;
+   left: 490px;
+	top: 0;
+   display: block;
+   /*color: red;*/
+   width: 0px;
+   height: 0px;
+   border-radius: 100%;
+   border-right:  100px solid cornflowerblue;
+   border-bottom: 70px  solid red;
+   
+   -moz-transform:    rotate(35deg);
+   -webkit-transform: rotate(35deg);
+   -ms-transform:     rotate(35deg);
+   -o-transform:      rotate(35deg);
+	
+}
+
+

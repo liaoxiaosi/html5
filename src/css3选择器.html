@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>选择器</title>
+		<style>
+			/*h1 + p{color: #0f0;}
+			h1 + p ~p{color: #f00;}
+			
+			li:empty{border: 1px solid red;}
+			section{margin:10px;width:600px;max-height:300px;border:1px solid #ddd;padding:10px;}
+			section:target{border: 4px solid goldenrod;}
+			
+			ul{padding:0;margin:0;list-style: none;}
+		.demo{padding:20px;height:40px;}
+		.demo li{float:left;margin:0 5px;width:40px;height:40px;line-height:40px;background:#666;border-radius:50%;text-align:center;color:#fff;}
+		
+		.demo1 li:nth-child(3),
+		.demo4 li:nth-child(2n),
+		.demo5 li:nth-child(2n-1),
+		.demo2 li:nth-child(n+4),
+		.demo3 li:nth-child(-n+4),
+		.demo6 li:nth-child(3n+1),
+		.demo7 li:last-child,
+		.demo8 li:nth-last-child(3n){background:#f60;}*/
+		
+		section h1:nth-child(1){
+			color: royalblue;
+		}
+		section h2:nth-of-type(2n){
+			color: aquamarine;
+		}
+		</style>
+	</head>
+	<body>
+		<!---h1 + p   --->h1后面的第一个p元素--->
+		<!---h1 + p ~p   --->h1后面的第一个p元素后的所有p 元素--->
+		<!--<section>
+			<h1>兄弟选择器</h1>
+			<p>我是你姐妹2</p>
+			<p>我是你姐妹3</p>
+			<p>我是你姐妹4</p>
+			<div> 你瞅啥呢</div>
+			
+		</section>
+		<ul>-->
+			<!---没有子元素的元素--->
+			<!--<li>111</li>
+			<li>111</li>
+			<li>111</li>
+			<li></li>
+		</ul>-->
+		
+		//使用锚点    section:target{border: 4px solid goldenrod;} 根元素
+		<!--<section>
+			<h2>您喜欢的城市</h2>
+			<ul>
+				<li class="hot"><a href="#gz">广州</a></li>
+				<li><a href="#gz2">北京</a></li>
+				<li>上海</li>
+				<li class="hot">南宁</li>
+				<li><a href="#gz3">杭州</a></li>
+			
+			
+			
+			</ul>
+		</section>
+		
+		
+		<section id="gz">
+			<h4>广州</h4>
+			<p>肠粉</p>
+		</section >
+		<section id="gz2">
+			<h4>广州3</h4>
+			<p>肠粉2</p>
+		</section>
+		<section id="gz3">
+			<h4>广州33</h4>
+			<p>肠粉33</p>
+		</section>
+		-->
+		
+		//:nth-child(n) :nth-last-child(n):从后面数  :last-child
+		<h4>案例1：nth-child(3)</h4>
+	<ul class="demo demo1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+	<h4>案例2：nth-child(n+4)</h4>
+	<ul class="demo demo2">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+	<h4>案例3：nth-child(-n+4)</h4>
+	<ul class="demo demo3">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+	<h4>案例4：nth-child(2n)</h4>
+	<ul class="demo demo4">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+	<h4>案例5：nth-child(2n-1)</h4>
+	<ul class="demo demo5">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+	<h4>案例6：nth-child(3n+1)</h4>
+	<ul class="demo demo6">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+	<h4>案例7：last-child</h4>
+	<ul class="demo demo7">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+	<h4>案例8：nth-last-child(3)</h4>
+	<ul class="demo demo8">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+	
+	<section>
+		<h1>nth新玩法</h1>
+		<p>美国队长</p>
+		<p>蝙蝠侠大战钢铁侠</p>
+		<h2>蜘蛛侠大战钢铁侠</h2>
+		<h2>神奇四侠</h2>
+		<p>z猪猪侠</p>
+		<p>煎饼侠</p>
+	</section>
+		
+	</body>
+</html>

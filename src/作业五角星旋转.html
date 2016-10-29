@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>五角星旋转</title>
+				<style>
+.star{
+   margin: 70px 0;
+   position: relative;
+   left: 220px;
+   top: 200px;
+   display: block;
+   width: 0px;
+   height: 0px;
+   border-right:  100px solid transparent;
+   border-bottom: 70px  solid red;
+	border-left:   100px solid transparent;
+   -moz-transform:    rotate(35deg);
+   -webkit-transform: rotate(35deg);
+   -ms-transform:     rotate(35deg);
+   -o-transform:      rotate(35deg);
+   
+}
+
+/*以最左边的角为坐标轴   顺时针旋转360度  没有container时*/
+/*.star:hover{
+  	transform: rotate(360deg);
+	transform-origin: left bottom;
+	transition:transform  2s;
+	
+}*/
+
+.star:before {
+   border-bottom: 120px solid red;
+   border-left: 40px solid transparent;
+   border-right: 40px solid transparent;
+   position: absolute;
+   height: 0;
+   width:0;
+   top: -55px;
+   left: -65px;
+   display: block;
+   content: "";
+   -webkit-transform: rotate(-35deg);
+   -moz-transform:    rotate(-35deg);
+   -ms-transform:     rotate(-35deg);
+   -o-transform:      rotate(-35deg);
+
+}
+
+.star:after {
+   position: absolute;
+   display: block;
+   color: red;
+   top: 3px;
+   left: -105px;
+   width: 0px;
+   height: 0px;
+   border-right: 100px solid transparent;
+   border-bottom: 70px solid red;
+   border-left: 100px solid transparent;
+   -webkit-transform: rotate(-70deg);
+   -moz-transform:    rotate(-70deg);
+   -ms-transform:     rotate(-70deg);
+   -o-transform:      rotate(-70deg);
+   content: "";
+}
+.container{
+	width: 200px;
+	height: 200px;
+	transition: transform 1s;
+	
+}
+
+/*缩小*/
+.container:hover{
+	transform: rotate(360deg) scale(0.2);
+}
+		</style>
+
+	</head>
+	<body>
+		<div class="container">
+			
+		<div class="star"></div>
+		</div>
+	</body>
+</html>
